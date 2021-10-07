@@ -8,3 +8,5 @@ started on 6 oct 2021
 --  lagging on large grid
 
 -- implemented event delegation to reduce number of listeners, still a little laggy
+
+-- god bless string.repeat();
