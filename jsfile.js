@@ -68,7 +68,35 @@ slide.addEventListener("input", changeGrid);
     console.log(typeof(gridSize));
     
     console.log((currentSquares - (gridSize*gridSize))+" diff out of loop");
-  
+   
+    let rows = gridSize;
+    let columns = gridSize;
+``
+      // make 1 row first
+      stringWidth = `${contain.clientWidth/gridSize}px`;
+      let col =  document.createElement("div");
+      col.classList.add("column");
+      contain.innerHTML = "";
+      col.innerHTML = "";
+      for(let i = 0; i < columns; i++)
+      {
+         console.log(i+" columns printing");
+         col.innerHTML += `<div class = 'small'  style = "min-width: ${stringWidth}; min-height: ${stringWidth}; max-width: ${stringWidth}; max-height: ${stringWidth};" ></div>`;
+         console.log(col);
+      }
+
+     
+
+      for(let i =0; i< rows; i++)
+      {
+         contain.innerHTML += col.innerHTML;
+         console.log(col.innerHTML+ " checking col innerhtml")
+      }
+
+
+
+/*
+
     if((gridSize*gridSize) >  currentSquares)
      {
          let diff = (gridSize*gridSize) -  currentSquares;
@@ -107,7 +135,7 @@ slide.addEventListener("input", changeGrid);
         sq.style.maxWidth = stringWidth;
         sq.style.backgroundColor = "white";
      })
-
+*/
 
  //    console.log(event.target.value+" here ev target");
      val.textContent = `Value : ${event.target.value}`;
@@ -124,3 +152,14 @@ slide.addEventListener("input", changeGrid);
 
 
 // implement to add squares instead of starting from beginning  `
+
+//change how grid is updated
+/*
+<div class="small" style="min-width: 160px; min-height: 160px; max-height: 160px; max-width: 160px; background-color: blue;"></div>
+
+<div class="small" style="min-width: 160px; min-height: 160px; max-height: 160px; max-width: 160px;"></div> nnow
+
+<div class="small" style="min-width : 160px; min-height : 160px; max-width ; 160px; max-height : 160px;"></div>
+
+
+<div class="small" style="min-width = 160px; min-height = 160px; max-width = 160px; max-height = 160px;"></div>*/
