@@ -44,6 +44,8 @@ function handleColor(event)
  //   console.log(event.currentTarget.nodeName);
     console.log(event.target);
   //  console.log(event);
+
+
   event.target.style.backgroundColor = "blue";
   //  event.target.style.backgroundColor = "black";
 }
@@ -69,29 +71,34 @@ slide.addEventListener("input", changeGrid);
     
     console.log((currentSquares - (gridSize*gridSize))+" diff out of loop");
    
-    let rows = gridSize;
-    let columns = gridSize;
+  //  let rows = gridSize;
+   // let columns = gridSize;
 ``
       // make 1 row first
       stringWidth = `${contain.clientWidth/gridSize}px`;
-      let col =  document.createElement("div");
-      col.classList.add("column");
+     // let col =  document.createElement("div");
+     // col.classList.add("column");
       contain.innerHTML = "";
-      col.innerHTML = "";
-      for(let i = 0; i < columns; i++)
+     // col.innerHTML = "";
+      let stringCol =  `<div class = 'small'  style = "min-width: ${stringWidth}; min-height: ${stringWidth}; max-width: ${stringWidth}; max-height: ${stringWidth};" ></div>`;
+      console.log(stringCol.repeat(10));
+    //  col.innerHTML = stringCol.repeat(gridSize);
+
+    /*  for(let i = 0; i < columns; i++)
       {
          console.log(i+" columns printing");
+
          col.innerHTML += `<div class = 'small'  style = "min-width: ${stringWidth}; min-height: ${stringWidth}; max-width: ${stringWidth}; max-height: ${stringWidth};" ></div>`;
          console.log(col);
-      }
+      }*/
 
-     
+      contain.innerHTML = stringCol.repeat(gridSize*gridSize);
 
-      for(let i =0; i< rows; i++)
+  /*    for(let i =0; i< rows; i++)
       {
          contain.innerHTML += col.innerHTML;
          console.log(col.innerHTML+ " checking col innerhtml")
-      }
+      }*/
 
 
 
