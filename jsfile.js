@@ -33,14 +33,21 @@ for(let i = 1; i <= gridSize*gridSize; i++)
 }
 
 let grid = document.querySelectorAll(".small");
-grid.forEach(square =>
-    {
-        square.addEventListener("mouseenter", (ev)=>
-        {
-           
-            ev.target.style.backgroundColor = "black";
-        })
-    })
+
+
+contain.addEventListener("mouseover", handleColor )
+
+function handleColor(event)
+{
+   // console.log(event+" event dele check");
+   // console.dir(event);
+ //   console.log(event.currentTarget.nodeName);
+    console.log(event.target);
+  //  console.log(event);
+  event.target.style.backgroundColor = "blue";
+  //  event.target.style.backgroundColor = "black";
+}
+
 
 
 slide.addEventListener("input", changeGrid);
@@ -61,7 +68,8 @@ slide.addEventListener("input", changeGrid);
     console.log(typeof(gridSize));
     
     console.log((currentSquares - (gridSize*gridSize))+" diff out of loop");
-     if((gridSize*gridSize) >  currentSquares)
+  
+    if((gridSize*gridSize) >  currentSquares)
      {
          let diff = (gridSize*gridSize) -  currentSquares;
          for ( let i  = 0; i < diff ; i++ )
@@ -107,15 +115,10 @@ slide.addEventListener("input", changeGrid);
 
    
 
- grid = document.querySelectorAll(".small");
- grid.forEach(square =>
-    {
-        square.addEventListener("mouseenter", (ev)=>
-        {
-           
-            ev.target.style.backgroundColor = "black";
-        })
-    })
+ 
+
+
+ 
 
 }
 
